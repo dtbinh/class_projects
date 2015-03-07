@@ -1,0 +1,41 @@
+public class Dog {    
+
+    String name;
+    int age;
+    int humanYears;
+
+    public Dog() {
+
+       	name = "";
+	age = 0;
+	humanYears = age * 7;
+	}
+
+    public void setName(String newValue){
+	name = newValue;
+    }
+
+     public String getName() {
+	 return name;
+    }
+
+    public void setAge(int newValue){
+	age = newValue;
+    }
+
+    public int getAge(){
+	return age;
+    }
+
+    public String toString(){
+
+	String formattedAge = ("Name: " + getName() + "Age: " + getAge() + "Age in human years: " + humanYears);
+
+	return formattedAge;
+    }
+
+    public static void main(String[] args){
+
+	//System.out.println(toString());
+    }
+}

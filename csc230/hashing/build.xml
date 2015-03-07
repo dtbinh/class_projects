@@ -1,0 +1,27 @@
+<project name="hashing" default="Driver">
+   <target name="compile" depends="clean">
+      <javac srcdir="."/>
+   </target>
+    
+   <target name="clean">
+      <delete>
+         <fileset dir="." includes="**/*.class"/>
+         <fileset dir="." includes="**/*.*~" defaultexcludes="no"/>
+      </delete>
+      <delete dir="META-INF"/>
+   </target>
+
+   <target name="Driver" depends="compile">
+      <java classname="Driver" classpath="."/>
+   </target>
+
+   <echo message="Authors: Jake and Matt"/>
+
+   <java classname="Driver.class" fork="yes">
+	 <classpath>
+	   <pathelement location="."/>
+	   <pathelement path="."/>
+	 </classpath>
+   </java>
+   
+</project>

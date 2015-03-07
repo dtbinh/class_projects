@@ -1,0 +1,13 @@
+Sort/Search Method		Duration	Calculations
+Linear Search (end):		19277		163
+Linear Search (middle):		603678		69
+Linear Search (beginning):	622542		1
+Linear Search (DNE):		13278706		2000
+Insertion Sort:			21524139141		1999000
+Merge Sort:			32570561		3282
+Quick Sort:			71325393		15937
+Bucket Sort:			174812836		18000
+Binary Search (end):		46917		21
+Binary Search (middle):		172463		21
+Binary Search (begining):	251028		21
+Binary Search (DNE):		262610		21

@@ -1,0 +1,175 @@
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+#define MAX_LINE 80
+
+int main(void)
+{
+    char *args[MAX_LINE/2 + 1];
+    int should_run = 1;
+    int status;
+    int pID;
+    char test[100];
+    int current = 0;
+    //char **history[10];
+    char **history;
+    history = (char**)malloc(sizeof(char) * 50);
+    int cycle = 0;
+    
+    while (should_run) {
+        printf("osh> ");
+        fflush(stdout);
+        
+        int count = 0;
+        
+        scanf("%[^\n]%*c", test);
+        
+        char *result = strtok(test, " ");
+        
+        while (result != NULL)
+        {
+            args[count] = result;
+            result = strtok(NULL, " ");
+            count++;
+        }
+        
+        args[count] = NULL;
+        
+        if(strcmp(args[0], "!!")==0)
+        {
+            
+            pID = fork();
+            
+            if(pID < 0)
+            {
+                printf("Fork Failed");
+                return 1;
+            }
+            else if(pID == 0)
+            {
+                printf("Running one \n");
+                if (cycle != 0) {
+                    
+                    if (current != 0)
+                        return execvp(history[current-1][0], history[current-1]);
+                    else
+                    {
+                        return execvp(history[9][0], history[9]);
+                    }
+                }
+                else
+                {
+                    printf("There is nothing in the history");
+                }
+            }
+            else
+            {
+                wait(&status);
+            }
+            
+        }
+        
+        if(strcmp(args[0], "!")==0)
+        {
+            pID = fork();
+            
+            if(pID < 0)
+            {
+                printf("Fork Failed");
+                return 1;
+            }
+            else if(pID == 0)
+            {
+                printf("Running two \n");
+                int tran = *args[1] - '0';
+                tran--;
+                if (tran >= 0 && tran < 10 && tran < cycle)
+                    return execvp(history[tran][0], history[tran]);
+                else
+                    printf("The value entered is outside of the history size");
+            }
+            else
+            {
+                wait(&status);
+            }
+        }
+        if(strcmp(args[0], "history")==0)
+        {
+            
+            if (cycle > 0) {
+                
+                for (int i = 0; i < 10; i++)
+                {
+                    if (i < cycle) {
+                        printf("running three \n");
+                        printf("%d", cycle-i);
+                        int j = 0;
+                        while (history[i][j] != NULL) {
+                            printf(" %s", history[i][j]);
+                            j++;
+                        }
+                        printf("\n");
+                    }
+                }
+            }
+            else
+                printf("there is nothing in the history");
+        }
+        
+        else{
+            
+            /*
+            int k = 0;
+            while (args[k] != NULL) {
+                printf (" %s", args[k]);
+                k++;
+            }
+             */
+            printf("Running four \n");
+            
+            history[current] = args;
+            /*
+             if (cycle > 0) {
+                 printf("%s", history[current-1][0]);
+                 printf("%s", history[current][0]);
+             }
+             */
+             
+            if (current != 9)
+            {
+                current++;
+                if (cycle < 10)
+                    cycle ++;
+            }
+            
+            else
+            {
+                current = 0;
+                if (cycle < 10) {
+                    cycle++;
+                }
+            }
+            
+            pID = fork();
+            
+            if(pID < 0)
+            {
+                printf("Fork Failed");
+                return 1;
+            }
+            else if(pID == 0)
+            {
+                return execvp(args[0], args);
+            }
+            else
+            {
+                wait(&status);
+            }
+        }
+    }
+    return 0;
+}

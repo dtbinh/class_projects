@@ -1,0 +1,33 @@
+Script started on Wed 24 Apr 2013 08:54:13 PM EDT
+]0;jake@flapjack: ~/Downloads/hashingjake@flapjack:~/Downloads/hashing$ ant
+Buildfile: /home/jake/Downloads/hashing/build.xml
+     [echo] Authors: Jake and Matt
+     [java] Error: Could not find or load main class Driver.class
+     [java] Java Result: 1
+
+clean:
+
+compile:
+    [javac] /home/jake/Downloads/hashing/build.xml:3: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 5 source files
+
+Driver:
+     [java] Size of 10 hash table: 3074
+     [java] Size of 100 hash table: 3074
+     [java] Size of 1000 hash table: 3074
+     [java] # of tumblr.com hostnames in size 10 hash table: 137
+     [java] # of tumblr.com hostnames in size 100 hash table: 137
+     [java] # of tumblr.com hostnames in size 1000 hash table: 137
+     [java] # of collisions in size of 10 hash table: 3067
+     [java] # of collisions in size of 100 hash table: 3025
+     [java] # of collisions in size of 1000 hash table: 2731
+     [java] Longest Chain in size of 10 hash table: 459
+     [java] Longest Chain in size of 100 hash table: 83
+     [java] Longest Chain in size of 1000 hash table: 19
+
+BUILD SUCCESSFUL
+Total time: 1 second
+]0;jake@flapjack: ~/Downloads/hashingjake@flapjack:~/Downloads/hashing$ exit
+exit
+
+Script done on Wed 24 Apr 2013 08:54:25 PM EDT

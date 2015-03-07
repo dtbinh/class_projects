@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_s3_final" default="compile.module.s3_final">
+  <dirname property="module.s3_final.basedir" file="${ant.file.module_s3_final}"/>
+  
+  <property name="module.jdk.home.s3_final" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.s3_final" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.s3_final" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.s3_final" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="s3_final.output.dir" value="${module.s3_final.basedir}/target/classes"/>
+  <property name="s3_final.testoutput.dir" value="${module.s3_final.basedir}/target/test-classes"/>
+  
+  <path id="s3_final.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="s3_final.module.production.classpath">
+    <path refid="${module.jdk.classpath.s3_final}"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-support:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpledb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpleworkflow:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-storagegateway:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-route53:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-s3:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-importexport:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sts:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sqs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-rds:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-redshift:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-glacier:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-iam:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-datapipeline:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-emr:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticache:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elastictranscoder:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ec2:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-dynamodb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sns:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudtrail:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-logs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitoidentity:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitosync:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-directconnect:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudformation:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudfront:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kinesis:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-opsworks:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ses:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-autoscaling:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudsearch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-swf-libraries:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-codedeploy:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kms:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-config:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-lambda:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ecs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudhsm:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-core:1.9.19.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.4.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.2.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.7.classpath"/>
+  </path>
+  
+  <path id="s3_final.runtime.production.module.classpath">
+    <pathelement location="${s3_final.output.dir}"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-support:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpledb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpleworkflow:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-storagegateway:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-route53:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-s3:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-importexport:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sts:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sqs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-rds:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-redshift:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-glacier:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-iam:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-datapipeline:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-emr:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticache:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elastictranscoder:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ec2:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-dynamodb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sns:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudtrail:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-logs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitoidentity:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitosync:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-directconnect:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudformation:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudfront:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kinesis:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-opsworks:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ses:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-autoscaling:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudsearch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-swf-libraries:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-codedeploy:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kms:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-config:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-lambda:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ecs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudhsm:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-core:1.9.19.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.4.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.2.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.7.classpath"/>
+  </path>
+  
+  <path id="s3_final.module.classpath">
+    <path refid="${module.jdk.classpath.s3_final}"/>
+    <pathelement location="${s3_final.output.dir}"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-support:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpledb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpleworkflow:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-storagegateway:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-route53:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-s3:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-importexport:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sts:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sqs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-rds:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-redshift:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-glacier:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-iam:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-datapipeline:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-emr:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticache:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elastictranscoder:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ec2:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-dynamodb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sns:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudtrail:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-logs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitoidentity:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitosync:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-directconnect:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudformation:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudfront:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kinesis:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-opsworks:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ses:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-autoscaling:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudsearch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-swf-libraries:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-codedeploy:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kms:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-config:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-lambda:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ecs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudhsm:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-core:1.9.19.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.4.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.2.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.7.classpath"/>
+  </path>
+  
+  <path id="s3_final.runtime.module.classpath">
+    <pathelement location="${s3_final.testoutput.dir}"/>
+    <pathelement location="${s3_final.output.dir}"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-support:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpledb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-simpleworkflow:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-storagegateway:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-route53:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-s3:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-importexport:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sts:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sqs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-rds:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-redshift:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-glacier:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-iam:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-datapipeline:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-emr:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elasticache:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-elastictranscoder:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ec2:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-dynamodb:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-sns:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudtrail:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-logs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitoidentity:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cognitosync:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-directconnect:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudformation:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudfront:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kinesis:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-opsworks:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ses:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-autoscaling:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudsearch:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-swf-libraries:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-codedeploy:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-kms:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-config:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-lambda:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-ecs:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-cloudhsm:1.9.19.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-java-sdk-core:1.9.19.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.3.4.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.3.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.2.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.7.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.s3_final">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.s3_final">
+    <patternset refid="excluded.from.module.s3_final"/>
+  </patternset>
+  
+  <path id="s3_final.module.sourcepath">
+    <dirset dir="${module.s3_final.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.s3_final" depends="compile.module.s3_final.production,compile.module.s3_final.tests" description="Compile module s3_final"/>
+  
+  <target name="compile.module.s3_final.production" depends="register.custom.compilers" description="Compile module s3_final; production classes">
+    <mkdir dir="${s3_final.output.dir}"/>
+    <javac2 destdir="${s3_final.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.s3_final}/javac">
+      <compilerarg line="${compiler.args.s3_final}"/>
+      <bootclasspath refid="s3_final.module.bootclasspath"/>
+      <classpath refid="s3_final.module.production.classpath"/>
+      <src refid="s3_final.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.s3_final"/>
+    </javac2>
+    
+    <copy todir="${s3_final.output.dir}">
+      <fileset dir="${module.s3_final.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.s3_final.tests" depends="register.custom.compilers,compile.module.s3_final.production" description="compile module s3_final; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.s3_final" description="cleanup module">
+    <delete dir="${s3_final.output.dir}"/>
+    <delete dir="${s3_final.testoutput.dir}"/>
+  </target>
+</project>

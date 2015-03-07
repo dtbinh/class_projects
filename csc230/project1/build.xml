@@ -1,0 +1,19 @@
+<project name="project1" default="run">
+   <target name="compile" depends="clean">
+      <javac srcdir="."/>
+   </target>
+    
+   <target name="clean">
+      <delete>
+         <fileset dir="." includes="**/*.class"/>
+         <fileset dir="." includes="**/*.*~" defaultexcludes="no"/>
+         <fileset dir="." includes="**/sortedData.txt" defaultexcludes="no"/>
+      </delete>
+      <delete dir="META-INF"/>
+   </target>
+
+   <target name="run" depends="compile">
+      <java classname="Driver" classpath="."/>
+   </target>
+   
+</project>

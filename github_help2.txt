@@ -1,0 +1,5 @@
+[user]
+	email = orbenjc@gmail.com
+	name = Jake
+[push]
+	default = simple

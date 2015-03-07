@@ -1,0 +1,47 @@
+Script started on Fri Sep 27 16:29:27 2013
+[?1034hbash-3.2$ dsconfigad -passinterval 0[C[C[C[C[C[C[C[C[C[Cprolog[K/Volumes/MATHWORKS_R2012A/install ; exit;[C[C[C[C[C[C[C[C[C[Cexit[K/Volumes/MATHWORKS_R2012A/install ; exit;[C[C[C[C[C[C[C[C[C[Cprolog[Kdsconfigad -passinterval 0[C[C[C[C[C[C[C[C[C[C[Kg++ tempDriver.cpp tm[KempFns.cpp -o av[K[KtempInfo
+bash-3.2$ ./tempInfo 
+Enter name of file to read from: temps.txt
+Temperature data after calculating averages.
+
+The temperatures for the month are : 
+      Day    Temp1    Temp2    Temp3    Temp4 Average
+        1    45.00    46.00    43.00    42.00    44.00
+        2    32.00    34.00    35.00    32.00    33.25
+        3    43.00    45.00    46.00    41.00    43.75
+        4    21.00    23.00    24.00    24.00    23.00
+        5    45.00    46.00    43.00    42.00    44.00
+        6    32.00    34.00    35.00    32.00    33.25
+        7    43.00    45.00    46.00    41.00    43.75
+        8    21.00    23.00    24.00    24.00    23.00
+        9    45.00    46.00    43.00    42.00    44.00
+       10    32.00    34.00    35.00    32.00    33.25
+       11    43.00    45.00    46.00    41.00    43.75
+       12    21.00    23.00    24.00    24.00    23.00
+       13    45.00    46.00    43.00    42.00    44.00
+       14    32.00    34.00    35.00    32.00    33.25
+       15    43.00    45.00    46.00    41.00    43.75
+       16    21.00    23.00    24.00    24.00    23.00
+       17    45.00    46.00    43.00    42.00    44.00
+       18    32.00    34.00    35.00    32.00    33.25
+       19    43.00    45.00    46.00    41.00    43.75
+       20    21.00    23.00    24.00    24.00    23.00
+       21    45.00    46.00    43.00    42.00    44.00
+       22    32.00    34.00    35.00    32.00    33.25
+       23    43.00    45.00    46.00    41.00    43.75
+       24    21.00    23.00    24.00    24.00    23.00
+       25    45.00    46.00    43.00    42.00    44.00
+       26    32.00    34.00    35.00    32.00    33.25
+       27    43.00    45.00    46.00    41.00    43.75
+       28    71.00    72.00    74.00    72.00    72.25
+
+Average temperature :
+37.76
+Standard deviation :
+10.82
+Enter name of file to write to: temperatures
+Bye!
+bash-3.2$ exit
+exit
+
+Script done on Fri Sep 27 16:30:57 2013

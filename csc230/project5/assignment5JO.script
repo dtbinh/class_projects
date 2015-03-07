@@ -1,0 +1,40 @@
+Script started on Fri 03 May 2013 03:27:38 PM EDT
+]0;jake@flapjack: ~/Downloads/project5jake@flapjack:~/Downloads/project5$ ant
+Buildfile: /home/jake/Downloads/project5/build.xml
+     [echo] Author: Jake
+     [java] Error: Could not find or load main class Driver.class
+     [java] Java Result: 1
+
+clean:
+
+compile:
+    [javac] /home/jake/Downloads/project5/build.xml:3: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 7 source files
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+Driver:
+     [java] What character would you like to search for relationships?
+24-HOUR MAN/EMMANUEL
+     [java] AA2 35
+     [java] What issue would you like to search for relationships?
+AA2 35
+     [java] 24-HOUR MAN/EMMANUEL
+     [java] FROST, CARMILLA
+     [java] G'RATH
+     [java] M'SHULLA
+     [java] OLD SKULL
+
+BUILD SUCCESSFUL
+Total time: 13 seconds
+]0;jake@flapjack: ~/Downloads/project5jake@flapjack:~/Downloads/project5$ java Driver 
+What character would you like to search for relationships?
+asdf
+The character that you have entered is invalid.
+What issue would you like to search for relationships?
+ajkldgh
+The issue that you have entered is invalid.
+]0;jake@flapjack: ~/Downloads/project5jake@flapjack:~/Downloads/project5$ exit
+exit
+
+Script done on Fri 03 May 2013 03:28:11 PM EDT

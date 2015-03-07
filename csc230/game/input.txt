@@ -1,0 +1,54 @@
+Do you want to play 20 Questions?
+LeftNode-Is it awesome?
+LeftNode-is it a mammal?
+LeftNode-Is it horned?
+LeftNode-Do they dislike lepracahauns?
+LeftNode-Has it ever boxed with Mike Tyson?
+LeftNode-Has it ever gone to war with the Pollacks?
+LeftNode-Has it ever dueled a polar bear? 
+LeftNode-Has it ever participated in a triatholon?
+LeftNode-Has it discovered how many licks it takes to get to the center of a tootsie pop?
+LeftNode-Was it inspiration for Picasso's "Starry Night"?
+LeftNode-Does it smell like Funions?
+LeftNode-Is it renowned for it's pancake making skills?
+LeftNode-Has it ever performed in Cirque du Seleil?
+LeftNode-Has it ever won a pie baking competition?
+LeftNode-Has it saved a kitten from a tree?
+LeftNode-Has it ever participated in a rollar derby?
+LeftNode-Does it dislike licorice?
+LeftNode-Has it ever found candy mountain?
+LeftLeaf-Is it a unicorn?
+RightLeaf-Is it a narwhal? 
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-Is it a tricertops?
+RightNode-Is it a nautical critter?
+LeftLeaf-Is it a narwhal?
+RightNode-Does it have 4 legs?
+LeftNode-Does it have a tail?
+LeftNode-Does it fight crime?
+LeftNode-Can it be ridden?
+LeftNode-Is it larger than a bread box?
+LeftNode-Does it ride on rainbows?
+LeftLeaf-Is it a unicorn?
+RightLeaf-Is it a tricertops?
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE
+RightLeaf-emptyE

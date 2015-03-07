@@ -1,0 +1,33 @@
+public class PairOfDice {
+    public static void main(String[] args) {
+
+	Die method = new Die(1);
+	
+	double DieOne = 0;
+
+	Die.roll;
+
+	Die.setFaceValue;
+	
+	Die.getFaceValue;
+
+	Die.toString;
+
+
+	Die method = new Die1(1);
+	
+	double DieTwo = 0;
+	
+	Die.roll;
+
+	Die.setFaceValue;
+
+	Die.getFaceValue;
+
+	Die.toString;
+
+	
+	System.out.println(Die+Die1);
+
+    }
+}

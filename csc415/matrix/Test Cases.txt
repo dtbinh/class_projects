@@ -1,0 +1,42 @@
+Functionality Tested 	Inputs 	Expected Output 	Actual Output 
+			
+Add 2 matrices of the same size 	"matrixA, matrixB "	matrixR 	Some values are incorrectly calculated. 
+			
+Add a matrix and a complex number 	"matrixA, complexA "	matrixS 	matrixS 
+			
+overload input operator	data into Matrix A	Matrix A	Matrix A
+overload  assignment	Matrix B into Matrix A	Matrix A = Matrix B	Matrix A = Matrix B
+Test Matrix B	Matrix B	Matrix B unchanged	Matrix B unchanged
+Overload +	Matrix A + Matrix B	Matrix C doubled	Matrix C doubled
+operator +	Matrix + Complext	int is added to Matrix	int is added to Matrix
+Matrix * Matrix	Matrix A * Matrix B	Matrix D = A*B	Matrix D = A*B
+Matrix * Complex	Matrix A * Complex	Matrix A is Multiplied	Matrix A is Multiplied
+matrixB = matrix B	Matrix A = Matrix B	Matrix A = Matrix B	Matrix A = Matrix B
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

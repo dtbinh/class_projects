@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A7BB2126-5EE3-4679-95E3-B993D2E415A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>hello</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>88A549A0FFE942D5BD77501151014883ECCB0D1F</key>
+		<string>https://github.com/orbenjc/class_programming.git</string>
+		<key>D9008BC5FD5C4F5360918F1BDD3B2020F925BF3C</key>
+		<string>https://github.com/orbenjc/csc470.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>project2/openCL_Hello_World_Example/hello.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>88A549A0FFE942D5BD77501151014883ECCB0D1F</key>
+		<string>../../../../..</string>
+		<key>D9008BC5FD5C4F5360918F1BDD3B2020F925BF3C</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/orbenjc/csc470.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D9008BC5FD5C4F5360918F1BDD3B2020F925BF3C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>88A549A0FFE942D5BD77501151014883ECCB0D1F</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D9008BC5FD5C4F5360918F1BDD3B2020F925BF3C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>csc470</string>
+		</dict>
+	</array>
+</dict>
+</plist>

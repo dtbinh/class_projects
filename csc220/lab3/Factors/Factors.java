@@ -1,0 +1,16 @@
+public class Factors{
+    public static void main(String[] args){
+
+	long N = Long.parseLong(args[0]);
+	for (int i = 2; i * i <= N; i++){
+	    if (N % i == 0) {
+		System.out.print(i + " ");
+	    }
+	    while (N % i == 0)
+		N = N / i;
+	}
+	if (N > 1) System.out.println(N);
+	else System.out.println();
+
+    }
+}

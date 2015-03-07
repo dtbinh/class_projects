@@ -1,0 +1,87 @@
+/Vending machine
+/User inputs quarters or dimes to purchase a bottle of soda for $1.00
+/Appropriate change is to be dispensed after the bottle of soda
+/Assume good behavior (no error checking) of only depositing quarters or dimes
+/
+	ORG 010
+CIF,	SKI 		/start of loop to input the change, check input flag
+	BUN CIF		/ if flag = 0, do a busy wait
+	INP		/ when flag = 1, get the input character into the AC
+	STA MON		/store the coin in the money placeholder variable
+IF,	CMA
+	INC		/2.s complement of coin
+	ADD Q		/check if coin is a quarter
+	SZA		/if AC=0 then MON is a Quarter (the coin deposited) /so goto the THEN clause
+	BUN ELS		/otherwise goto the ELSE clause
+THN,	LDA QTR	
+	STA COI		/coin = 25
+	BUN EIF		/goto end of if then statement
+ELS,	LDA DIM	
+	STA COI		/coin = 10
+EIF,	LDA SUM		/sum is a running total of coins inputed
+	ADD COI
+	STA SUM		/sum = sum + coin
+IFS,	CMA
+	INC		/get 2's comp of sum
+	ADD MAX		/check if sum has reached max
+	SNA		/if AC is negative, the sum was  /larger than $1.00 and we are done
+	BUN CK2		/see if sum is large enough = $1.00
+PT2,	BSA CHG		/call subroutine to calculate change to return
+COF,	SKO		/busy wait on output
+	BUN COF
+	LDA CNO	
+	OUT		/output change 
+CO2,	SKO
+	BUN CO2		/busy wait until the change has been "removed"
+DON,	LDA SDA
+	OUT 		/dispense the soda
+	HLT
+CK2,	SZA		/if AC=0, the sum was = $1.00, so we can finish up
+	BUN CIF		/if not done, then go back to input loop and get next coin
+	BUN DON		/we're done, so go dispense soda
+CHG,	HEX 0		/place holder; save return address here
+	ADD NIC		/Adds a nickle to the total remaining
+	SZA		/skip if the change is 5
+	BUN PLS0	/if more than amount skip to next add
+	LDA N		/load hex value of N
+	STA CNO		/stores change in memory
+	BUN CHG I	/outputs the change
+PLS0,	ADD NIC		/adds a nickle to the total remaining
+	SZA		/skip if value is hit
+	BUN PLS1	/changes to next if value is not hit
+	LDA D		/loads hex for dime into memory
+	STA CNO		/stores the data
+	BUN CHG I	/output change
+PLS1,	ADD NIC		/adds nickle to toal
+	SZA		/checks for 0
+	BUN PLS2	/branch to next if change is not zero
+	LDA N		/loads hex for nickle
+CO1,	SKO 		
+	BUN CO1 	/branch to co1
+	OUT		/outputs change
+	LDA D		/loads hex for dime
+	STA CNO		/stores change in memory
+	BUN CHG I	/prints out change
+PLS2,	LDA D		/loads hex for D
+	STA CNO		/stores data
+CO3,	SKO
+	BUN CO3		/branch to co3
+	OUT		/outputs change
+	LDA D		/loads hex for D
+	STA CNO		/stores vale
+	BUN CHG I	/branch for print
+	STA CNO		/put the coin's face into "coin out"
+	BUN CHG I	/return to main routine via the saved return address.    /note indirect addressing
+MON,	HEX 0		/placeholder for inputted coin "MONey"
+Q,	DEC 81		/ascii value for "Q"
+D,	DEC 68		/ascii value for "D"
+N,	DEC 78		/ascii value for "N"
+QTR,	DEC 25		/QTR is worth 25 cents
+DIM,	DEC 10		/DIM a dime is worth 10 cents
+NIC,   	DEC 5  		/NIC a nickle is worth 5 cents
+COI,	HEX 0		/COIn is initialized to 0, placeholder for value of inputted coin
+SUM,	HEX 0		/running total of value of coins inputed so far
+MAX,	DEC 100		/maximum cost of soda is 100 cents ($1.00)
+CNO,	HEX 0		/calculated change to output, initialized to 0
+SDA,	DEC 83		/Soda is ascii S = 83
+	END

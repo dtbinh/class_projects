@@ -1,0 +1,51 @@
+Script started on Fri 08 Mar 2013 10:03:58 PM EST
+]0;jake@flapjack: ~/Downloads/project2jake@flapjack:~/Downloads/project2$ ant
+Buildfile: /home/jake/Downloads/project2/build.xml
+
+clean:
+
+compile:
+    [javac] /home/jake/Downloads/project2/build.xml:3: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 10 source files
+
+analyzeIt:
+     [java] Could not find Driver. Make sure you have it in your classpath
+     [java] 	at org.apache.tools.ant.taskdefs.ExecuteJava.execute(ExecuteJava.java:138)
+     [java] 	at org.apache.tools.ant.taskdefs.Java.run(Java.java:771)
+     [java] 	at org.apache.tools.ant.taskdefs.Java.executeJava(Java.java:221)
+     [java] 	at org.apache.tools.ant.taskdefs.Java.executeJava(Java.java:135)
+     [java] 	at org.apache.tools.ant.taskdefs.Java.execute(Java.java:108)
+     [java] 	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     [java] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     [java] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+     [java] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+     [java] 	at java.lang.reflect.Method.invoke(Method.java:601)
+     [java] 	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     [java] 	at org.apache.tools.ant.Task.perform(Task.java:348)
+     [java] 	at org.apache.tools.ant.Target.execute(Target.java:390)
+     [java] 	at org.apache.tools.ant.Target.performTasks(Target.java:411)
+     [java] 	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+     [java] 	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+     [java] 	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+     [java] 	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+     [java] 	at org.apache.tools.ant.Main.runBuild(Main.java:809)
+     [java] 	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+     [java] 	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+     [java] 	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+     [java] Java Result: -1
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+]0;jake@flapjack: ~/Downloads/project2jake@flapjack:~/Downloads/project2$ java analyzeIt 
+Your data file has been successfully submitted.
+Linear Search completed.
+Insertion sort completed.
+Merge sort completed.
+Quick sort completed.
+Bucket sort completed.
+Binary search completed.
+Your data has been sent to the requested output file
+]0;jake@flapjack: ~/Downloads/project2jake@flapjack:~/Downloads/project2$ exit
+exit
+
+Script done on Fri 08 Mar 2013 10:04:38 PM EST

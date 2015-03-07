@@ -1,0 +1,8 @@
+Script started on Fri 01 Mar 2013 10:07:14 PM EST
+]0;jake@flapjack: ~/Downloadsjake@flapjack:~/Downloads$ javac reader.java 
+]0;jake@flapjack: ~/Downloadsjake@flapjack:~/Downloads$ java reader 
+Please enter a sentence: There once was a man from                           If you like pina colata  das and getting caught in the rain. 
+fI uoy ekil anip sadaloc dna gnitteg thguac ni eht niar]0;jake@flapjack: ~/Downloadsjake@flapjack:~/Downloads$ exit
+exit
+
+Script done on Fri 01 Mar 2013 10:08:29 PM EST

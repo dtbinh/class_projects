@@ -1,0 +1,151 @@
+// ******************************************************************
+// Purpose: This program does nbody simulation 
+// Compilation: javac Nbody.java
+// Please make sure all the files extracted from Nbody.jar and Nbody.java
+//        are under same directory
+// Execution: java Nbody < planets.txt       
+// 
+// ******************************************************************
+
+// import Scanner class, which processes data from keyboard
+import java.util.Scanner;
+
+public class Nbody {
+
+    // method dist calculates distance between two points
+    // it accepts four double values (x1, y1, x2, y2)
+    // it returns a double value
+    private static double dist(double x1, double y1, double x2, double y2){
+
+         double r;
+         r = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+         return r;
+    } 
+    
+    // main method of the program
+    public static void main(String[] args) {
+        // constant value G
+        final double G = 6.67e-11;
+        // constant value delta T, which determines animation interval
+        final double deltaT = 25000.0;
+        
+        // ax and ay are accerlations on x axis and y axis
+        double ax;
+        double ay;
+
+        // define an keyboard object: scan
+        Scanner scan = new Scanner (System.in);
+        // read in the first integer, which specify how many particles
+        int bodyNum = scan.nextInt();
+        // read in radius of universe
+        double radius = scan.nextDouble();
+        
+        // define arrays to save x values and y values of each particle
+        double[] x = new double[bodyNum];
+        double[] y = new double[bodyNum];
+        
+        // define arrays to save velocity of each particle
+        double[] vx = new double[bodyNum];
+        double[] vy = new double[bodyNum];
+    
+        double[] m = new double[bodyNum];  // array stores mass of each particle
+        String[] name = new String[bodyNum]; // array stores file name of each particles
+        double[] Fx = new double[bodyNum]; // force on X axis
+        double[] Fy = new double[bodyNum]; // force on Y axis
+
+        StdDraw.setXscale(-radius, radius); // Set the X scale
+        StdDraw.setYscale(-radius, radius); // Set the Y scale
+        StdDraw.picture(0, 0, "starfield.jpg"); // Display background pic centered at (0,0)
+        
+        // read in inital location values and velocity values for each particle
+        for (int i = 0; i < bodyNum; i++){
+           x[i] = scan.nextDouble();
+           y[i] = scan.nextDouble();
+           vx[i] = scan.nextDouble();
+           vy[i] = scan.nextDouble();
+           m[i] = scan.nextDouble();
+           name[i] = scan.next();
+           StdDraw.picture(x[i], y[i], name[i]); // display particle pic on screen
+        }
+       
+        // This following line play background music, uncomment it in lab
+        // If you work from a remote location via VNC, comment it
+        //StdAudio.play("2001.mid");
+
+        // main animation loop
+        while(true){
+             
+            // array Fx and Fy store net force acting on each body
+            // initialize these two arrays to zeros
+      
+            for (int n = 0; n<bodyNum; n++){
+               Fx[n] = 0.0;
+               Fy[n] = 0.0;
+            }
+
+             //  for loop to process all bodies
+             for(int body = 0; body<bodyNum; body++){
+                
+                // calculate the gravitational attraction between current body
+                // and all other bodies
+		 
+		for (int anotherBody = 0; anotherBody < bodyNum; anotherBody++){
+
+                 // calculate only when two bodies are different
+                 // Please fill out the following if statement body                 
+                 
+		 	double dx = x[anotherBody]-x[body];
+		        double dy = y[anotherBody]-y[body];
+
+		     	double r = Math.sqrt((dx*dx)+(dy*dy));
+		     
+			double force = (G*m[body]*m[anotherBody])/(r*r);
+		     
+
+		    
+
+		     Fx[body] += force*dx/r;
+		     Fy[body] += force*dy/r;
+
+		     //Fx[body] += force*((x[body]-x[body])/(dist(x[body], y[body], x[anotherBody], y[anotherBody])));
+		     //Fy[body] += force*((y[body]-y[body])/(dist(x[body], y[body], x[anotherBody], y[anotherBody])));
+                   if(body != anotherBody){
+                   
+                 }
+               }
+             }
+
+             // update vleocity value and location value for each particle
+             // please fill out the for loop
+             for (int j = 0; j < bodyNum; j++){
+                 
+		   ax = Fx[j]/m[j];
+		   ay = Fy[j]/m[j];
+
+		
+		 // calculate accleration rate
+
+		   vx[j] += deltaT * ax;
+		   vy[j] += deltaT * ay;
+
+                 // update vleocity value and location value
+
+		   x[j] += vx[j]*deltaT;
+		   y[j] += vy[j]*deltaT;
+               
+             } 
+             // redraw background
+             StdDraw.setXscale(-radius, radius);
+             StdDraw.setYscale(-radius, radius);
+             StdDraw.picture(0, 0, "starfield.jpg");
+   
+             for (int i = 0; i < bodyNum; i++){
+                 // display the particle           
+                 StdDraw.picture(x[i], y[i], name[i]);
+             }
+                   
+             // display and pause for 30ms      
+             StdDraw.show(30);        
+        }
+    }
+}

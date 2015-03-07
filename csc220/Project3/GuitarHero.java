@@ -1,0 +1,43 @@
+public class GuitarHero {
+	public static void main(String[] args) {
+
+		
+		int index = 0;
+		double sample = 0.0;
+		String keyboard ="1234567890qwertyuiopasdfghjklzxcvbnm,";
+		
+		GuitarString[] string = new GuitarString[keyboard.length()];
+		
+		for(int i = 0; i < 37; i++) {
+		    double concert = 440.0 * Math.pow(2, ((i-24)/12));
+		    string[i] = new GuitarString(concert);
+		}
+		
+		while (true){
+			
+			if (StdDraw.hasNextKeyTyped()) {
+				char key = StdDraw.nextKeyTyped();
+				index = keyboard.indexOf(key);
+				
+				if (index >= 0 && index < 37){
+					string[index].pluck();
+				}
+			}
+			
+
+			sample = 0.0;
+			for(int i=0; i<37; i++){
+			    
+			    sample += string[i].sample();
+					
+			}
+
+			StdAudio.play(sample);
+			
+			for(int i = 0; i < 37; i++){
+				string[i].tic();
+			}			
+		}	
+	
+	}
+}

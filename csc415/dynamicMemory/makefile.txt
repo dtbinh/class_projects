@@ -1,0 +1,5 @@
+makefile:
+all: dynamicMemory
+
+dynmicMemory:
+	g++ *.cpp -o run
